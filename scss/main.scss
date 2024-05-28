@@ -227,10 +227,14 @@ a {
 }
 
 .section {
-    &__statistic, &__advantages {
+
+    &__statistic,
+    &__advantages,
+    &__quote,
+    &__features {
         padding-top: 50px;
-         }
- 
+    }
+
 }
 
 .statistic {
@@ -240,7 +244,7 @@ a {
         position: relative;
         margin-top: 100px;
         width: 100%;
-        
+
 
         &_photo {
             position: absolute;
@@ -266,6 +270,7 @@ a {
             @include flex(flex-start, flex-start, flex-start, 50px, column);
         }
     }
+
     &__list {
         @include flex(space-between, center, center, 80px, column);
         width: 100%;
@@ -296,37 +301,149 @@ a {
     }
 }
 
+.advantages {
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        padding: 20px 30px;
+        margin-top: 100px;
+    }
+
+    &__item {
+        @include flex(space-between, flex-start, flex-start, 20px, column);
+        border-top: 1px $main-color-line solid;
+        padding: 50px;
+
+    }
+}
+
+.quote {
+    &__wrapper {
+        @include flex(space-between, flex-start, flex-start, 40px, column);
+        width: auto;
+        height: fit-content;
+        padding: 100px 150px;
+        background-image: url(../assets/images/img/quote-background.jpg);
+        background-size: cover;
+        object-fit: cover;
+    }
+
+    &__text {
+        position: relative;
+        width: 80%;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.5;
+
+        &::before {
+            position: absolute;
+            content: url(../assets/images/img/quote-icon.png);
+            transform: scale(1);
+            top: -35px;
+            left: -65px;
+        }
+    }
+}
+
+.section__video {
+    margin: 120px auto;
+}
+
+.video {
+    &__wrapper {
+        @include flex(center, center, center, 0px);
+        width: 100%;
+    }
+
+    &__image {
+        position: absolute;
+        width: 970px;
+        object-fit: contain;
+    }
+
+    &__iframe {
+        position: relative;
+        width: 870px;
+        height: 539px;
+        border-radius: 10px;
+        left: -1.7%;
+        border: 2px $main-color-line solid;
+    }
+
+    &__signature {
+        margin: 100px 100px;
+    }
+}
+
+.features {
+    &__content {
+        @include flex(space-between, center, center, 0px);
+        flex-wrap: nowrap;
+        position: relative;
+        margin-top: 100px;
+        width: 100%;
+
+
+        &_photo {
+            position: absolute;
+            width: 600;
+            height: 540px;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        &_wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            position: relative;
+            padding: 45px;
+            background-color: $background-block;
+            backdrop-filter: blur(5px);
+            width: 100%;
+            margin-left: 33%;
+            z-index: 1;
+        }
+    }
+}
+
 .title-h2 {
     font-size: 40px;
     font-family: $font-family_title;
     color: $color-title;
     font-weight: $font-weight_title;
     line-height: $line-height;
+    padding-bottom: 15px;
 }
 
 .title-h3 {
     font-size: 28px;
-    font-family: Sulphur Point, sans-serif;
-    font-weight: 700;
+    font-family: $font-family_title;
     color: $color-title;
-    margin: 0;
-    padding: 10px 0;
+    font-weight: $font-weight_title;
+    line-height: $line-height;
+    padding-bottom: 15px;
 }
 
 .title-h4 {
-    font-size: 23px;
-    font-family: Sulphur Point, sans-serif;
-    font-weight: 400;
+    font-size: 24px;
+    font-family: $font-family_title;
     color: $color-title;
-    margin: 0;
-    padding: 10px 0;
+    font-weight: $font-weight_title;
+    line-height: $line-height;
+    padding-bottom: 15px;
 }
 
 .title-h6 {
-    font-size: 16px;
-    color: $color-text;
-    margin: 0;
-    padding: 0;
+    font-size: 20px;
+    font-family: $font-family_title;
+    font-style: $font-style-italic;
+    color: $color-title;
+    font-weight: $font-weight_title;
+    line-height: $line-height;
 }
 
 .title-h6-post,
@@ -343,11 +460,10 @@ small {
 }
 
 .text {
-    position: relative;
     color: $color-text;
     margin: 0;
-    line-height: 1.5;
-    padding: 10px 0;
+    line-height: 1.4;
+    padding: 7px 0;
 
     &__statistic {
         font-size: $font-size-main;
@@ -400,28 +516,45 @@ small {
     }
 }
 
-.contact-text {
-    color: #000
-}
+
 
 .flex {
     @include flex(space-between, flex-start, center, 30px);
 }
 
 
+
 .btn {
-    @extend %btn-shared;
+    
+    
 
-    &__center {
-        text-align: center;
-    }
+     &__text {
+        @extend %btn-shared;
+        position: relative;
 
-    &:hover {
-        background-color: #FFCC00;
-        color: $color-text;
-        transition: 0.3s;
-    }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 32%;
+            left: 37%;
+            background: #53F3CD30;
+            height: 13px;
+            width: 34%;
+        }
+
+        &:hover {
+            color: #d1fff4;
+            border-color: #d1fff4;
+            transition: 0.2s;
+
+            &::after {
+                height: 3px;
+                transition: 0.2s;
+            }
+         }
+     }
 }
+
 
 
 

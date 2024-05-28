@@ -26,23 +26,46 @@
 
     .section__statistic {
         padding-top: 30px;
-      }
+    }
 
-      .statistic__content_wrapper {
+    .statistic__content_wrapper {
         margin-left: 0%;
         width: 90%;
         margin-top: 300px;
-      }
-
-      .statistic__content {
-        flex-direction: column; 
     }
-      .statistic__content_photo {
+
+    .statistic__content {
+        flex-direction: column;
+    }
+
+    .statistic__content_photo {
         height: 500px;
-        width: 100%; }
+        width: 100%;
+    }
 
     .statistic__list_item {
-        font-size: 45px;}
+        font-size: 45px;
+    }
+
+    .quote__text {
+        width: 100%;
+    }
+
+    .video {
+        &__image {
+            width: 720px;
+        }
+
+        &__iframe {
+            width: 646px;
+            height: 400px;
+        }
+    }
+.video__signature {
+    text-align: center;
+    margin: 50px 50px;
+}
+
 }
 
 @media screen and (max-width: 768px) {
@@ -51,7 +74,7 @@
     }
 
     .statistic__content {
-        flex-direction: column; 
+        flex-direction: column;
         padding-top: 30px;
     }
 
@@ -59,10 +82,27 @@
         margin-left: 0%;
         width: 90%;
         margin-top: 300px;
-      }
-      .statistic__content_photo {
+    }
+
+    .statistic__content_photo {
         height: 500px;
-        width: 100%; }
+        width: 100%;
+    }
+
+    .quote__wrapper {
+        padding: 60px 100px;
+    }
+
+    .video {
+        &__image {
+            width: 540px;
+        }
+
+        &__iframe {
+            width: 485px;
+            height: 300px;
+        }
+    }
 }
 
 
@@ -71,7 +111,7 @@
 
     .container {
         padding: 0 15px;
-            }
+    }
 
     .main__content {
         width: 90%;
@@ -94,9 +134,47 @@
     }
 
     .statistic__content_desc {
-        width: 100%;}
+        width: 100%;
+    }
 
-        .statistic__content_desc {
-            text-align: center;
+    .statistic__content_desc {
+        text-align: center;
+        align-items: center;
+    }
+
+    .quote__text {
+        font-size: 21px;
+
+        &::before {
+            transform: scale(.5);
+
         }
+    }
+
+    .quote__wrapper {
+        padding: 40px 50px;
+    }
+
+    .advantages__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        padding: 10px 10px;
+    }
+
+    .title-h2 {
+        font-size: 27px;
+    }
+
+    .video {
+        &__image {
+            width: 350px;
+        }
+
+        &__iframe {
+            width: 314px;
+            height: 195px;
+        }
+    }
 }

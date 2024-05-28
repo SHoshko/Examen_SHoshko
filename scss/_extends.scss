@@ -1,8 +1,10 @@
 %btn-shared {
     padding: 30px 90px;
-    border: 1px;
-    background-color: $background_btn;
     color: $color-text-link;
+    border: 1px $main-color-line solid;
+    text-transform: uppercase;
+    color: $color-text-link;
+    background-color: #16192696;
     font-family: $font-family_main;
     font-size: 20px;
     font-weight: 700;
