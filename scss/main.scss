@@ -211,19 +211,18 @@ a {
         line-height: $line-height;
     }
 
-    .title_italic {
-        font-family: $font-family_title-italic;
-        font-style: $font-style-italic;
-        color: $color-title-italic;
-    }
-
     &__image {
         position: absolute;
         width: 100%;
         object-fit: contain;
         z-index: 0;
     }
+}
 
+.title_italic {
+    font-family: $font-family_title-italic;
+    font-style: $font-style-italic;
+    color: $color-title-italic;
 }
 
 .section {
@@ -434,7 +433,7 @@ a {
             line-height: 1.5;
             z-index: 1;
         }
-        
+
         &_title {
             z-index: 1;
         }
@@ -447,12 +446,74 @@ a {
             top: 0%;
             transform: translateX(-50%);
             opacity: 0.3;
-            
+
             z-index: 0;
         }
     }
+}
 
+.footer {
+    margin-top: 100px;
+    
+    &__wrapper {
+        @include flex(space-between, flex-start, flex-start, 30px);
+        border-top: 1px $main-color-line solid;
+        padding: 60px 0;
+    }
 
+    &__contact {
+        width: 40%;
+        margin-top: 50px;
+    }
+
+    &__form {
+        width: 40%;
+    }
+}
+
+.form {
+    @include flex(space-between, flex-start, center, 10px, column);
+    
+    &_item{
+        margin: 30px 0;
+    }
+
+    &_text {
+        width: 100%;
+        padding: 12px;
+        border-bottom: 1px $main-color-line solid; 
+        background-color: $background-main;
+        font-size: 18px;
+        font-family: $font-family_title-italic;
+        font-style: $font-style-italic;
+        color: $color-text;
+        letter-spacing: 1px;
+
+        &:focus {
+            border-bottom: 1px $color-text-link solid; 
+        }
+    }
+}
+
+.footer__copyright {
+    @include flex(space-between, center, center, 20px);
+    border-top: 1px $main-color-line solid;
+    padding: 30px 0;
+}
+
+.small-text {
+    font-size: 14px;
+    font-weight: $font-weight;
+    color: $color-text-small;
+}
+
+.regular {
+    font-weight: $font-weight_title;
+    color: $color-text;
+}
+
+.footer-nav {
+    @include flex(space-between, center, center, 30px);
 }
 
 .title-h2 {
@@ -518,19 +579,22 @@ small {
 }
 
 .link {
-    position: relative;
 
     &__text {
+        position: relative;
+        font-family: $font-family_main;
         font-size: 20px;
         font-weight: 700;
         color: $color-text-link;
         padding: 20px 0;
         text-transform: uppercase;
+        background-color: #16192600;
+        border: none;
 
         &::after {
             content: '';
             position: absolute;
-            bottom: -25%;
+            bottom: 27%;
             left: 11%;
             background: #53F3CD30;
             height: 13px;
@@ -548,20 +612,6 @@ small {
     }
 }
 
-.footer {
-    height: 300px;
-    width: 100%;
-    padding: 70px 0;
-    margin-top: 90px;
-
-    &__contact {
-        @include flex(space-between, flex-start, center, 10px, column);
-        flex-wrap: wrap;
-        align-self: center;
-    }
-}
-
-
 
 .flex {
     @include flex(space-between, flex-start, center, 30px);
@@ -570,10 +620,10 @@ small {
 
 
 .btn {
-    
-    
 
-     &__text {
+
+
+    &__text {
         @extend %btn-shared;
         position: relative;
 
@@ -596,8 +646,8 @@ small {
                 height: 3px;
                 transition: 0.2s;
             }
-         }
-     }
+        }
+    }
 }
 
 
