@@ -231,7 +231,8 @@ a {
     &__statistic,
     &__advantages,
     &__quote,
-    &__features {
+    &__features,
+    &__review {
         padding-top: 50px;
     }
 
@@ -383,13 +384,13 @@ a {
         @include flex(space-between, center, center, 0px);
         flex-wrap: nowrap;
         position: relative;
-        margin-top: 100px;
+        margin-top: 30px;
         width: 100%;
 
 
         &_photo {
             position: absolute;
-            width: 600;
+            width: 600px;
             height: 540px;
             object-fit: cover;
             z-index: 0;
@@ -408,6 +409,50 @@ a {
             z-index: 1;
         }
     }
+}
+
+.review {
+    &__title {
+        width: 400px;
+        margin-top: 120px;
+    }
+
+    &__wrapper {
+        @include flex(space-between, center, center, 0px);
+    }
+
+    &__content {
+        position: relative;
+        @include flex(space-between, flex-start, stretch, 20px, column);
+        padding: 30px 40px;
+        width: 33%;
+        margin: 30px 0;
+        overflow: hidden;
+
+        &_text {
+            font-size: 16px;
+            line-height: 1.5;
+            z-index: 1;
+        }
+        
+        &_title {
+            z-index: 1;
+        }
+
+        &_photo {
+            position: absolute;
+            height: 100%;
+            object-fit: cover;
+            left: 50%;
+            top: 0%;
+            transform: translateX(-50%);
+            opacity: 0.3;
+            
+            z-index: 0;
+        }
+    }
+
+
 }
 
 .title-h2 {
